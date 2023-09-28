@@ -1,5 +1,8 @@
 const choiceArr = ["rock", "paper", "scissors"];
 
+let playerWins = 0;
+let computerWins = 0;
+
 const getComputerChoice = () => {
   const choice = choiceArr[Math.floor(Math.random() * 3)];
   return choice;
@@ -26,29 +29,38 @@ const playRound = (playerSelection, computerSelection) => {
   const tieMessage = `Tie! you both choose ${computerSelection}`;
 
   if (computerSelection === playerSelection) {
-    return tieMessage;
-  } else if (computerSelection === "rock" && playerSelection === "paper") {
-    return winMessage;
-  } else if (computerSelection === "rock" && playerSelection === "scissors") {
-    return loseMessage;
-  } else if (computerSelection === "paper" && playerSelection === "rock") {
-    return loseMessage;
-  } else if (computerSelection === "paper" && playerSelection === "scissors") {
-    return winMessage;
-  } else if (computerSelection === "scissors" && playerSelection === "rock") {
-    return winMessage;
-  } else if (computerSelection === "scissors" && playerSelection === "paper") {
-    return loseMessage;
+    console.log(tieMessage);
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    playerWins++;
+    console.log(winMessage);
+  } else {
+    computerWins++;
+    console.log(loseMessage);
   }
 };
 
 const game = () => {
-  playRound();
-  playRound();
-  playRound();
-  playRound();
-  playRound();
+  for (i = 0; i < 5; i++) {
+    playRound();
+  }
+
+  if (computerWins > playerWins) {
+    console.log("computer wins");
+  } else if (computerWins < playerWins) {
+    console.log("You Win");
+  } else if ((computerWins = playerWins)) {
+    console.log("it's a tie!");
+  } else {
+    console.log("start a game!");
+  }
+  console.log(computerWins, "computer");
+  console.log(playerWins, "player");
 };
+game();
 /*
 We are going to build a rock paper scissors application that is
 played in the console.
