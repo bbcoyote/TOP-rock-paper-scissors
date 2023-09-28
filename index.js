@@ -49,8 +49,6 @@ const game = () => {
   playRound();
   playRound();
 };
-
-console.log(playRound());
 /*
 We are going to build a rock paper scissors application that is
 played in the console.
