@@ -3,21 +3,63 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: #000c4c;
+  margin: 0;
+  padding: 0;
 }
 
 div {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 100px;
 }
 
 button {
   width: 200px;
   height: 200px;
   font-size: 32px;
+  background-color: #4c4000;
+  color: #fff5c0;
+  border-radius: 25px / 100px;
+  border: 2px solid black;
+  box-shadow: 10px 10px 12px black;
 }
 
 button:hover {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.winner {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-container,
+.display-winner {
+  color: #fff5c0;
+  font-size: 28px;
+}
+
+.reset-game {
+  width: 200px;
+  height: 200px;
+  font-size: 32px;
+  background-color: #4c4000;
+  color: #fff5c0;
+  border-radius: 25px / 100px;
+  border: 2px solid black;
+  box-shadow: 10px 10px 12px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset-game:hover {
   cursor: pointer;
 }
