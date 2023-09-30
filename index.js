@@ -33,18 +33,27 @@ resetButton.addEventListener("click", () => {
   declareWinner.textContent = "";
   playerScore.textContent = playerWins;
   computerScore.textContent = computerWins;
-  console.log(computerWins, "comp");
-  console.log(playerWins, "player");
+  rockButton.style.display = "flex";
+  paperButton.style.display = "flex";
+  scissorsButton.style.display = "flex";
 });
 
 const getResults = () => {
   if (playerWins >= 5 && playerWins > computerWins) {
     declareWinner.textContent = "You Win The Game!";
+    hideButtons();
   } else if (computerWins >= 5 && computerWins > playerWins) {
     declareWinner.textContent = "You Lose The Game!";
+    hideButtons();
   }
   playerScore.textContent = playerWins;
   computerScore.textContent = computerWins;
+};
+
+const hideButtons = () => {
+  rockButton.style.display = "none";
+  paperButton.style.display = "none";
+  scissorsButton.style.display = "none";
 };
 
 const rockButton = document.querySelector("#rock");
