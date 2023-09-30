@@ -9,12 +9,6 @@ const getComputerChoice = () => {
 };
 
 const playRound = (playerSelection, computerSelection) => {
-  /* we want the logic of this function to lowercase the playerSelection input
-  so if the player inputs ROCK rock will be returned.
-  we also want to create a conditional for the case of player chooses rock
-  and computer chooses paper to return you lose paper beats rock.
-  */
-
   playerSelection = prompt(
     "Lets play a game of Rock, Paper, Scissors"
   ).toLowerCase();
@@ -43,39 +37,33 @@ const playRound = (playerSelection, computerSelection) => {
   }
 };
 
-const game = () => {
-  for (i = 0; i < 5; i++) {
-    playRound();
-  }
+const buttonContainer = document.createElement("div");
+buttonContainer.id = "button-container";
+document.body.appendChild(buttonContainer);
+const rockButton = document.createElement("button");
+const paperButton = document.createElement("button");
+const scissorsButton = document.createElement("button");
+buttonContainer.append(rockButton, paperButton, scissorsButton);
 
-  if (computerWins > playerWins) {
-    console.log("computer wins");
-  } else if (computerWins < playerWins) {
-    console.log("You Win");
-  } else if ((computerWins = playerWins)) {
-    console.log("it's a tie!");
-  } else {
-    console.log("start a game!");
-  }
-  console.log(computerWins, "computer");
-  console.log(playerWins, "player");
-};
-game();
-/*
-We are going to build a rock paper scissors application that is
-played in the console.
+rockButton.textContent = "rock";
+paperButton.textContent = "paper";
+scissorsButton.textContent = "scissors";
 
-we will need a way to store the user input and a computer generated input
-a variable can be used to store the inputs.
+// const game = () => {
+//   for (i = 0; i < 5; i++) {
+//     playRound();
+//   }
 
-we will need a function that will randomly generate the computers input
-We can make an array of rock, paper, scissors and use the index of these choices
-to randomly choose the computer input.
-the indexes are 0, 1, 2.
-we can use Math.floor(Math.random() * 2)
-
-after making the Array of choices.
-the first step will be to make a function called getComputerChoice
-this function will return a random number that will choose the index of the array
-of choices.
-*/
+//   if (computerWins > playerWins) {
+//     console.log("computer wins");
+//   } else if (computerWins < playerWins) {
+//     console.log("You Win");
+//   } else if ((computerWins = playerWins)) {
+//     console.log("it's a tie!");
+//   } else {
+//     console.log("start a game!");
+//   }
+//   console.log(computerWins, "computer");
+//   console.log(playerWins, "player");
+// };
+// game();
